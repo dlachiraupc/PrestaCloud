@@ -1,0 +1,48 @@
+# =============================================
+# CREDENCIALES Y CONFIGURACIÓN LOCAL
+# =============================================
+.env
+.env.*
+!.env.example
+*.credenciales.txt
+CLAVE-*.txt
+
+# =============================================
+# DEPENDENCIAS (se instalan con composer install / npm install)
+# =============================================
+prestacloud-app/vendor/
+tools/node_modules/
+
+# =============================================
+# GENERADO EN TIEMPO DE EJECUCIÓN
+# =============================================
+prestacloud-app/sesiones/
+prestacloud-app/storage/*
+!prestacloud-app/storage/.gitkeep
+.phpunit.cache/
+.phpunit.result.cache
+
+# =============================================
+# DATOS REALES: nunca al repositorio (Ley N.º 29733)
+# Los libros de Excel del negocio y los volcados de base de datos se quedan fuera.
+# Las pruebas usan prestacloud-app/tests/fixtures/ (solo códigos y cifras, sin nombres).
+# =============================================
+*.xlsx
+*.xlsm
+*.sql.gz
+BaseDeDatos_*.sql
+
+# =============================================
+# SISTEMA OPERATIVO E IDEs
+# =============================================
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+.vscode/
+.idea/
+~$*
+*.log
+/logs/
+.claude/settings.local.json
+prestacloud-app/VERSION

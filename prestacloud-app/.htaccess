@@ -1,0 +1,19 @@
+# ============================================================
+# PrestaCloud — .htaccess de la RAÍZ de la instalación
+#
+# La raíz web correcta del subdominio es public/ (ver DEPLOY.md). Este archivo es la segunda línea de
+# defensa: si por error el subdominio apuntara a esta carpeta, nada de src/, vendor/, migrations/ ni .env
+# sería accesible; todo se redirige por dentro a public/.
+# ============================================================
+Options -Indexes
+
+<FilesMatch "\.(env|sql|sql\.gz|log|sh|bak|pfx|p12|pem|key|json|lock|md|yml|yaml|dist)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>

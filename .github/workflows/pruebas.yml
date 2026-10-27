@@ -1,0 +1,76 @@
+name: Pruebas de PrestaCloud (PHP 8.2 + MySQL 5.7)
+
+# Se ejecuta en cada PR y en cada push a ramas de trabajo. Los despliegues (deploy-dev.yml y deploy-qa.yml)
+# la llaman como workflow reutilizable y solo despliegan si pasa.
+on:
+  pull_request:
+    paths-ignore: ['DOCUMENTOS/**']
+  push:
+    branches-ignore: [main, develop, staging]
+    paths-ignore: ['DOCUMENTOS/**']
+  workflow_dispatch:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  pruebas:
+    name: Sintaxis, migraciones y pruebas
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    services:
+      # Base efímera del runner, el mismo motor que el hosting. La contraseña no es un secreto:
+      # el contenedor solo existe durante el job y no tiene datos reales.
+      mysql:
+        image: mysql:5.7.44
+        env:
+          MYSQL_ROOT_PASSWORD: ci-root
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1 -uroot -pci-root"
+          --health-interval=5s --health-timeout=5s --health-retries=60
+    env:
+      DB_HOST: 127.0.0.1
+      DB_NAME: prestacloud_ci
+      DB_USER: prestacloud_ci
+      DB_PASS: ci-pass
+      MYSQL_ROOT_PASSWORD: ci-root
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mbstring, pdo_mysql
+          tools: composer:v2
+        env:
+          TZ: America/Lima
+
+      - name: Dependencias composer
+        run: composer install -d prestacloud-app --no-interaction --no-progress --prefer-dist
+
+      - name: Sintaxis PHP (php -l)
+        run: |
+          set -o pipefail
+          find prestacloud-app -name '*.php' -not -path '*/vendor/*' -print0 \
+            | xargs -0 -n1 -P4 php -l 2>&1 | { grep -v '^No syntax errors detected' || true; } > /tmp/lint.txt
+          if [ -s /tmp/lint.txt ]; then cat /tmp/lint.txt; exit 1; fi
+          echo "Sin errores de sintaxis"
+
+      - name: Sintaxis de los scripts de despliegue
+        run: for f in deploy/*.sh deploy/ci/*.sh; do bash -n "$f"; done
+
+      - name: El deploy no pisa .env, storage ni los archivos de cPanel (rsync --delete simulado)
+        run: bash deploy/ci/probar-rsync.sh
+
+      - name: Migraciones sobre MySQL 5.7 (con el script del deploy, dos veces)
+        run: bash deploy/ci/migrar-ci.sh
+
+      - name: PHPUnit (T1–T24, paridad con el v13, reglas por cuenta y base de datos)
+        working-directory: prestacloud-app
+        env:
+          PC_TEST_DB: '1'
+          APP_ENV: local
+        run: vendor/bin/phpunit

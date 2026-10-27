@@ -1,0 +1,7 @@
+{
+  "name": "prestacloud-tools",
+  "private": true,
+  "type": "module",
+  "description": "Herramientas de desarrollo (no se despliegan)",
+  "dependencies": { "jszip": "3.10.1" }
+}

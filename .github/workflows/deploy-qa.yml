@@ -1,0 +1,53 @@
+name: Deploy → prestamosqa.empresascloud.com (QA)
+
+on:
+  push:
+    branches: [staging]
+    paths-ignore: ['DOCUMENTOS/**']
+  workflow_dispatch:
+
+# Las ejecuciones se encadenan en orden: una más antigua nunca despliega después de una más nueva.
+concurrency:
+  group: deploy-prestacloud-hosting
+  cancel-in-progress: false
+
+jobs:
+  # Sintaxis, migraciones en MySQL 5.7 y pruebas: si fallan, no se despliega
+  pruebas:
+    uses: ./.github/workflows/pruebas.yml
+
+  deploy:
+    name: Deploy por SSH a QA
+    needs: pruebas
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mbstring, pdo_mysql
+          tools: composer:v2
+
+      - name: Dependencias composer (sin las de desarrollo)
+        run: composer install -d prestacloud-app --no-dev --optimize-autoloader --no-interaction
+
+      - name: Clave SSH
+        env:
+          SSH_KEY: ${{ secrets.SSH_KEY }}
+        run: |
+          mkdir -p ~/.ssh && chmod 700 ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/pc_deploy
+          chmod 600 ~/.ssh/pc_deploy
+
+      - name: Deploy (backup + migraciones + código)
+        env:
+          ENTORNO: qa
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          SSH_KEY_FILE: ~/.ssh/pc_deploy
+        run: bash deploy/deploy.sh
+
+      - name: Verificar
+        run: bash deploy/verificar-publicacion.sh qa

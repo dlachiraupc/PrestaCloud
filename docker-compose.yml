@@ -1,0 +1,43 @@
+# Entorno local de PrestaCloud. Mismo motor que el hosting: PHP 8.2 y MySQL 5.7.
+services:
+  db:
+    image: mysql:5.7.44
+    container_name: pc-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: prestacloud
+      MYSQL_USER: prestacloud
+      MYSQL_PASSWORD: prestacloud
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    ports:
+      - "3308:3306"
+    volumes:
+      - pc-db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-uroot", "-proot"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+
+  app:
+    build: ./docker/php
+    container_name: pc-app
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "9091:80"
+    volumes:
+      - ./prestacloud-app:/var/www/html
+      # vendor/ vive en un volumen de Docker: no se sincroniza con OneDrive y es más rápido en Windows
+      - pc-vendor:/var/www/html/vendor
+    environment:
+      APP_ENV: local
+      DB_HOST: db
+      DB_NAME: prestacloud
+      DB_USER: prestacloud
+      DB_PASS: prestacloud
+
+volumes:
+  pc-db:
+  pc-vendor:

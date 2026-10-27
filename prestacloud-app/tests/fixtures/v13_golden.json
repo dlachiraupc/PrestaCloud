@@ -1,0 +1,1715 @@
+{
+ "meta": {
+  "fuente": "PRESTAMOS_v13.xlsx (valores guardados, sin recalcular)",
+  "hoy": "2026-09-30",
+  "nota": "Solo códigos y cifras. Sin nombres, apodos, teléfonos ni referencias de clientes. Generado con tools/generar_golden_v13.mjs.",
+  "conteos": {
+   "clientes": 13,
+   "prestamos": 17,
+   "pagos": 46,
+   "movimientosCaja": 4
+  }
+ },
+ "config": {
+  "modalidades": [
+   {
+    "codigo": "C3D",
+    "cadaDias": 3,
+    "diaFijo": 0
+   },
+   {
+    "codigo": "SEMANAL",
+    "cadaDias": 7,
+    "diaFijo": 7
+   }
+  ],
+  "tramos": [
+   {
+    "modalidad": "C3D",
+    "desde": 0,
+    "tasaBp": 2000,
+    "nCuotas": 8,
+    "redondeo": 0
+   },
+   {
+    "modalidad": "SEMANAL",
+    "desde": 0,
+    "tasaBp": 4000,
+    "nCuotas": 8,
+    "redondeo": 0
+   },
+   {
+    "modalidad": "SEMANAL",
+    "desde": 50000,
+    "tasaBp": 4500,
+    "nCuotas": 12,
+    "redondeo": 1
+   }
+  ],
+  "tiposCaja": {
+   "SALDO INICIAL": 1,
+   "APORTE CAPITAL": 1,
+   "OTRO INGRESO": 1,
+   "RETIRO": -1,
+   "GASTO": -1,
+   "PAGO A INVERSIONISTA": -1,
+   "POR CONFIRMAR": 0
+  },
+  "calificacion": [
+   {
+    "etiqueta": "PUNTUAL",
+    "aumento": 10000,
+    "renueva": true
+   },
+   {
+    "etiqueta": "DESPUÉS DE LA HORA",
+    "aumento": 0,
+    "renueva": true
+   },
+   {
+    "etiqueta": "DESPUÉS DE LA FECHA",
+    "aumento": 0,
+    "renueva": false
+   },
+   {
+    "etiqueta": "NO RENOVAR",
+    "aumento": 0,
+    "renueva": false
+   }
+  ],
+  "puntualidad": {
+   "horaMaximaEnCelda": "17:00",
+   "toleranciaDias": 0,
+   "nHora": 1,
+   "nFecha": 1,
+   "nNoRenovar": 3
+  }
+ },
+ "caja": [
+  {
+   "fecha": "2026-09-05",
+   "tipo": "SALDO INICIAL",
+   "monto": 100000
+  },
+  {
+   "fecha": "2026-09-15",
+   "tipo": "APORTE CAPITAL",
+   "monto": 50000
+  },
+  {
+   "fecha": "2026-09-30",
+   "tipo": "APORTE CAPITAL",
+   "monto": 50000
+  },
+  {
+   "fecha": "2026-09-15",
+   "tipo": "OTRO INGRESO",
+   "monto": 7500
+  }
+ ],
+ "clientes": [
+  {
+   "codigo": "C001",
+   "calificacionManual": null,
+   "esperado": {
+    "nPrestamos": 1,
+    "vigentes": 1,
+    "deuda": 3000,
+    "atraso": 3000,
+    "pagado": 21000,
+    "situacion": "CON ATRASO",
+    "puntuales": 2,
+    "despuesHora": 0,
+    "despuesFecha": 5,
+    "calificacionAuto": "NO RENOVAR",
+    "calificacionUsada": "NO RENOVAR"
+   }
+  },
+  {
+   "codigo": "C002",
+   "calificacionManual": null,
+   "esperado": {
+    "nPrestamos": 3,
+    "vigentes": 2,
+    "deuda": 72750,
+    "atraso": 0,
+    "pagado": 29250,
+    "situacion": "ACTIVO",
+    "puntuales": 9,
+    "despuesHora": 0,
+    "despuesFecha": 0,
+    "calificacionAuto": "PUNTUAL",
+    "calificacionUsada": "PUNTUAL"
+   }
+  },
+  {
+   "codigo": "C003",
+   "calificacionManual": null,
+   "esperado": {
+    "nPrestamos": 1,
+    "vigentes": 0,
+    "deuda": 0,
+    "atraso": 0,
+    "pagado": 24000,
+    "situacion": "SIN DEUDA",
+    "puntuales": 8,
+    "despuesHora": 0,
+    "despuesFecha": 0,
+    "calificacionAuto": "PUNTUAL",
+    "calificacionUsada": "PUNTUAL"
+   }
+  },
+  {
+   "codigo": "C004",
+   "calificacionManual": null,
+   "esperado": {
+    "nPrestamos": 3,
+    "vigentes": 2,
+    "deuda": 66000,
+    "atraso": 0,
+    "pagado": 24000,
+    "situacion": "ACTIVO",
+    "puntuales": 8,
+    "despuesHora": 0,
+    "despuesFecha": 0,
+    "calificacionAuto": "PUNTUAL",
+    "calificacionUsada": "PUNTUAL"
+   }
+  },
+  {
+   "codigo": "C005",
+   "calificacionManual": null,
+   "esperado": {
+    "nPrestamos": 1,
+    "vigentes": 0,
+    "deuda": 0,
+    "atraso": 0,
+    "pagado": 24000,
+    "situacion": "SIN DEUDA",
+    "puntuales": 8,
+    "despuesHora": 0,
+    "despuesFecha": 0,
+    "calificacionAuto": "PUNTUAL",
+    "calificacionUsada": "PUNTUAL"
+   }
+  },
+  {
+   "codigo": "C006",
+   "calificacionManual": null,
+   "esperado": {
+    "nPrestamos": 1,
+    "vigentes": 1,
+    "deuda": 31500,
+    "atraso": 0,
+    "pagado": 10500,
+    "situacion": "ACTIVO",
+    "puntuales": 2,
+    "despuesHora": 0,
+    "despuesFecha": 0,
+    "calificacionAuto": "PUNTUAL",
+    "calificacionUsada": "PUNTUAL"
+   }
+  },
+  {
+   "codigo": "C007",
+   "calificacionManual": null,
+   "esperado": {
+    "nPrestamos": 1,
+    "vigentes": 1,
+    "deuda": 36750,
+    "atraso": 0,
+    "pagado": 5250,
+    "situacion": "ACTIVO",
+    "puntuales": 1,
+    "despuesHora": 0,
+    "despuesFecha": 0,
+    "calificacionAuto": "PUNTUAL",
+    "calificacionUsada": "PUNTUAL"
+   }
+  },
+  {
+   "codigo": "C008",
+   "calificacionManual": null,
+   "esperado": {
+    "nPrestamos": 1,
+    "vigentes": 1,
+    "deuda": 36750,
+    "atraso": 0,
+    "pagado": 5250,
+    "situacion": "ACTIVO",
+    "puntuales": 1,
+    "despuesHora": 0,
+    "despuesFecha": 0,
+    "calificacionAuto": "PUNTUAL",
+    "calificacionUsada": "PUNTUAL"
+   }
+  },
+  {
+   "codigo": "C009",
+   "calificacionManual": null,
+   "esperado": {
+    "nPrestamos": 1,
+    "vigentes": 1,
+    "deuda": 21000,
+    "atraso": 0,
+    "pagado": 7000,
+    "situacion": "ACTIVO",
+    "puntuales": 2,
+    "despuesHora": 0,
+    "despuesFecha": 0,
+    "calificacionAuto": "PUNTUAL",
+    "calificacionUsada": "PUNTUAL"
+   }
+  },
+  {
+   "codigo": "C010",
+   "calificacionManual": null,
+   "esperado": {
+    "nPrestamos": 1,
+    "vigentes": 1,
+    "deuda": 28000,
+    "atraso": 0,
+    "pagado": 0,
+    "situacion": "ACTIVO",
+    "puntuales": 0,
+    "despuesHora": 0,
+    "despuesFecha": 0,
+    "calificacionAuto": null,
+    "calificacionUsada": null
+   }
+  },
+  {
+   "codigo": "C011",
+   "calificacionManual": null,
+   "esperado": {
+    "nPrestamos": 1,
+    "vigentes": 1,
+    "deuda": 24000,
+    "atraso": 0,
+    "pagado": 0,
+    "situacion": "ACTIVO",
+    "puntuales": 0,
+    "despuesHora": 0,
+    "despuesFecha": 0,
+    "calificacionAuto": null,
+    "calificacionUsada": null
+   }
+  },
+  {
+   "codigo": "C012",
+   "calificacionManual": null,
+   "esperado": {
+    "nPrestamos": 1,
+    "vigentes": 1,
+    "deuda": 24000,
+    "atraso": 0,
+    "pagado": 0,
+    "situacion": "ACTIVO",
+    "puntuales": 0,
+    "despuesHora": 0,
+    "despuesFecha": 0,
+    "calificacionAuto": null,
+    "calificacionUsada": null
+   }
+  },
+  {
+   "codigo": "C013",
+   "calificacionManual": null,
+   "esperado": {
+    "nPrestamos": 1,
+    "vigentes": 1,
+    "deuda": 24000,
+    "atraso": 0,
+    "pagado": 0,
+    "situacion": "ACTIVO",
+    "puntuales": 0,
+    "despuesHora": 0,
+    "despuesFecha": 0,
+    "calificacionAuto": null,
+    "calificacionUsada": null
+   }
+  }
+ ],
+ "prestamos": [
+  {
+   "codigo": "P001",
+   "cliente": "C001",
+   "modalidad": "C3D",
+   "fecha": "2026-09-05",
+   "prestado": 20000,
+   "esperado": {
+    "ciclo": 1,
+    "tasaBp": 2000,
+    "nCuotas": 8,
+    "total": 24000,
+    "cuotaPrimera": 3000,
+    "cuotaNormal": 3000,
+    "plan": "8 × 30.00",
+    "fechaPrimera": "2026-09-08",
+    "fechaFin": "2026-09-29",
+    "cobrado": 21000,
+    "saldo": 3000,
+    "cuotasPagadas": 7,
+    "cuotasVencidas": 8,
+    "atraso": 3000,
+    "proximaFecha": "2026-09-29",
+    "diasAtraso": 1,
+    "estado": "ATRASADO",
+    "gananciaTotal": 4000,
+    "gananciaCobrada": 3500,
+    "capitalEnLaCalle": 2500,
+    "calificacion": "NO RENOVAR",
+    "renovacionSugerida": 0
+   }
+  },
+  {
+   "codigo": "P002",
+   "cliente": "C002",
+   "modalidad": "C3D",
+   "fecha": "2026-09-05",
+   "prestado": 20000,
+   "esperado": {
+    "ciclo": 1,
+    "tasaBp": 2000,
+    "nCuotas": 8,
+    "total": 24000,
+    "cuotaPrimera": 3000,
+    "cuotaNormal": 3000,
+    "plan": "8 × 30.00",
+    "fechaPrimera": "2026-09-08",
+    "fechaFin": "2026-09-29",
+    "cobrado": 24000,
+    "saldo": 0,
+    "cuotasPagadas": 8,
+    "cuotasVencidas": 8,
+    "atraso": 0,
+    "proximaFecha": null,
+    "diasAtraso": 0,
+    "estado": "CANCELADO",
+    "gananciaTotal": 4000,
+    "gananciaCobrada": 4000,
+    "capitalEnLaCalle": 0,
+    "calificacion": "PUNTUAL",
+    "renovacionSugerida": 30000
+   }
+  },
+  {
+   "codigo": "P003",
+   "cliente": "C003",
+   "modalidad": "C3D",
+   "fecha": "2026-09-05",
+   "prestado": 20000,
+   "esperado": {
+    "ciclo": 1,
+    "tasaBp": 2000,
+    "nCuotas": 8,
+    "total": 24000,
+    "cuotaPrimera": 3000,
+    "cuotaNormal": 3000,
+    "plan": "8 × 30.00",
+    "fechaPrimera": "2026-09-08",
+    "fechaFin": "2026-09-29",
+    "cobrado": 24000,
+    "saldo": 0,
+    "cuotasPagadas": 8,
+    "cuotasVencidas": 8,
+    "atraso": 0,
+    "proximaFecha": null,
+    "diasAtraso": 0,
+    "estado": "CANCELADO",
+    "gananciaTotal": 4000,
+    "gananciaCobrada": 4000,
+    "capitalEnLaCalle": 0,
+    "calificacion": "PUNTUAL",
+    "renovacionSugerida": 30000
+   }
+  },
+  {
+   "codigo": "P004",
+   "cliente": "C004",
+   "modalidad": "C3D",
+   "fecha": "2026-09-05",
+   "prestado": 20000,
+   "esperado": {
+    "ciclo": 1,
+    "tasaBp": 2000,
+    "nCuotas": 8,
+    "total": 24000,
+    "cuotaPrimera": 3000,
+    "cuotaNormal": 3000,
+    "plan": "8 × 30.00",
+    "fechaPrimera": "2026-09-08",
+    "fechaFin": "2026-09-29",
+    "cobrado": 24000,
+    "saldo": 0,
+    "cuotasPagadas": 8,
+    "cuotasVencidas": 8,
+    "atraso": 0,
+    "proximaFecha": null,
+    "diasAtraso": 0,
+    "estado": "CANCELADO",
+    "gananciaTotal": 4000,
+    "gananciaCobrada": 4000,
+    "capitalEnLaCalle": 0,
+    "calificacion": "PUNTUAL",
+    "renovacionSugerida": 30000
+   }
+  },
+  {
+   "codigo": "P005",
+   "cliente": "C005",
+   "modalidad": "C3D",
+   "fecha": "2026-09-05",
+   "prestado": 20000,
+   "esperado": {
+    "ciclo": 1,
+    "tasaBp": 2000,
+    "nCuotas": 8,
+    "total": 24000,
+    "cuotaPrimera": 3000,
+    "cuotaNormal": 3000,
+    "plan": "8 × 30.00",
+    "fechaPrimera": "2026-09-08",
+    "fechaFin": "2026-09-29",
+    "cobrado": 24000,
+    "saldo": 0,
+    "cuotasPagadas": 8,
+    "cuotasVencidas": 8,
+    "atraso": 0,
+    "proximaFecha": null,
+    "diasAtraso": 0,
+    "estado": "CANCELADO",
+    "gananciaTotal": 4000,
+    "gananciaCobrada": 4000,
+    "capitalEnLaCalle": 0,
+    "calificacion": "PUNTUAL",
+    "renovacionSugerida": 30000
+   }
+  },
+  {
+   "codigo": "P006",
+   "cliente": "C006",
+   "modalidad": "SEMANAL",
+   "fecha": "2026-09-14",
+   "prestado": 30000,
+   "esperado": {
+    "ciclo": 1,
+    "tasaBp": 4000,
+    "nCuotas": 8,
+    "total": 42000,
+    "cuotaPrimera": 5250,
+    "cuotaNormal": 5250,
+    "plan": "8 × 52.50",
+    "fechaPrimera": "2026-09-19",
+    "fechaFin": "2026-11-07",
+    "cobrado": 10500,
+    "saldo": 31500,
+    "cuotasPagadas": 2,
+    "cuotasVencidas": 2,
+    "atraso": 0,
+    "proximaFecha": "2026-10-03",
+    "diasAtraso": 0,
+    "estado": "AL DÍA",
+    "gananciaTotal": 12000,
+    "gananciaCobrada": 3000,
+    "capitalEnLaCalle": 22500,
+    "calificacion": "PUNTUAL",
+    "renovacionSugerida": 40000
+   }
+  },
+  {
+   "codigo": "P007",
+   "cliente": "C009",
+   "modalidad": "SEMANAL",
+   "fecha": "2026-09-14",
+   "prestado": 20000,
+   "esperado": {
+    "ciclo": 1,
+    "tasaBp": 4000,
+    "nCuotas": 8,
+    "total": 28000,
+    "cuotaPrimera": 3500,
+    "cuotaNormal": 3500,
+    "plan": "8 × 35.00",
+    "fechaPrimera": "2026-09-19",
+    "fechaFin": "2026-11-07",
+    "cobrado": 7000,
+    "saldo": 21000,
+    "cuotasPagadas": 2,
+    "cuotasVencidas": 2,
+    "atraso": 0,
+    "proximaFecha": "2026-10-03",
+    "diasAtraso": 0,
+    "estado": "AL DÍA",
+    "gananciaTotal": 8000,
+    "gananciaCobrada": 2000,
+    "capitalEnLaCalle": 15000,
+    "calificacion": "PUNTUAL",
+    "renovacionSugerida": 30000
+   }
+  },
+  {
+   "codigo": "P008",
+   "cliente": "C002",
+   "modalidad": "SEMANAL",
+   "fecha": "2026-09-20",
+   "prestado": 30000,
+   "esperado": {
+    "ciclo": 1,
+    "tasaBp": 4000,
+    "nCuotas": 8,
+    "total": 42000,
+    "cuotaPrimera": 5250,
+    "cuotaNormal": 5250,
+    "plan": "8 × 52.50",
+    "fechaPrimera": "2026-09-26",
+    "fechaFin": "2026-11-14",
+    "cobrado": 5250,
+    "saldo": 36750,
+    "cuotasPagadas": 1,
+    "cuotasVencidas": 1,
+    "atraso": 0,
+    "proximaFecha": "2026-10-03",
+    "diasAtraso": 0,
+    "estado": "AL DÍA",
+    "gananciaTotal": 12000,
+    "gananciaCobrada": 1500,
+    "capitalEnLaCalle": 26250,
+    "calificacion": "PUNTUAL",
+    "renovacionSugerida": 40000
+   }
+  },
+  {
+   "codigo": "P009",
+   "cliente": "C007",
+   "modalidad": "SEMANAL",
+   "fecha": "2026-09-21",
+   "prestado": 30000,
+   "esperado": {
+    "ciclo": 1,
+    "tasaBp": 4000,
+    "nCuotas": 8,
+    "total": 42000,
+    "cuotaPrimera": 5250,
+    "cuotaNormal": 5250,
+    "plan": "8 × 52.50",
+    "fechaPrimera": "2026-09-26",
+    "fechaFin": "2026-11-14",
+    "cobrado": 5250,
+    "saldo": 36750,
+    "cuotasPagadas": 1,
+    "cuotasVencidas": 1,
+    "atraso": 0,
+    "proximaFecha": "2026-10-03",
+    "diasAtraso": 0,
+    "estado": "AL DÍA",
+    "gananciaTotal": 12000,
+    "gananciaCobrada": 1500,
+    "capitalEnLaCalle": 26250,
+    "calificacion": "PUNTUAL",
+    "renovacionSugerida": 40000
+   }
+  },
+  {
+   "codigo": "P010",
+   "cliente": "C008",
+   "modalidad": "SEMANAL",
+   "fecha": "2026-09-21",
+   "prestado": 30000,
+   "esperado": {
+    "ciclo": 1,
+    "tasaBp": 4000,
+    "nCuotas": 8,
+    "total": 42000,
+    "cuotaPrimera": 5250,
+    "cuotaNormal": 5250,
+    "plan": "8 × 52.50",
+    "fechaPrimera": "2026-09-26",
+    "fechaFin": "2026-11-14",
+    "cobrado": 5250,
+    "saldo": 36750,
+    "cuotasPagadas": 1,
+    "cuotasVencidas": 1,
+    "atraso": 0,
+    "proximaFecha": "2026-10-03",
+    "diasAtraso": 0,
+    "estado": "AL DÍA",
+    "gananciaTotal": 12000,
+    "gananciaCobrada": 1500,
+    "capitalEnLaCalle": 26250,
+    "calificacion": "PUNTUAL",
+    "renovacionSugerida": 40000
+   }
+  },
+  {
+   "codigo": "P011",
+   "cliente": "C011",
+   "modalidad": "C3D",
+   "fecha": "2026-09-30",
+   "prestado": 20000,
+   "esperado": {
+    "ciclo": 1,
+    "tasaBp": 2000,
+    "nCuotas": 8,
+    "total": 24000,
+    "cuotaPrimera": 3000,
+    "cuotaNormal": 3000,
+    "plan": "8 × 30.00",
+    "fechaPrimera": "2026-10-03",
+    "fechaFin": "2026-10-24",
+    "cobrado": 0,
+    "saldo": 24000,
+    "cuotasPagadas": 0,
+    "cuotasVencidas": 0,
+    "atraso": 0,
+    "proximaFecha": "2026-10-03",
+    "diasAtraso": 0,
+    "estado": "AL DÍA",
+    "gananciaTotal": 4000,
+    "gananciaCobrada": 0,
+    "capitalEnLaCalle": 20000,
+    "calificacion": null,
+    "renovacionSugerida": 20000
+   }
+  },
+  {
+   "codigo": "P012",
+   "cliente": "C002",
+   "modalidad": "C3D",
+   "fecha": "2026-09-30",
+   "prestado": 30000,
+   "esperado": {
+    "ciclo": 2,
+    "tasaBp": 2000,
+    "nCuotas": 8,
+    "total": 36000,
+    "cuotaPrimera": 4500,
+    "cuotaNormal": 4500,
+    "plan": "8 × 45.00",
+    "fechaPrimera": "2026-10-03",
+    "fechaFin": "2026-10-24",
+    "cobrado": 0,
+    "saldo": 36000,
+    "cuotasPagadas": 0,
+    "cuotasVencidas": 0,
+    "atraso": 0,
+    "proximaFecha": "2026-10-03",
+    "diasAtraso": 0,
+    "estado": "AL DÍA",
+    "gananciaTotal": 6000,
+    "gananciaCobrada": 0,
+    "capitalEnLaCalle": 30000,
+    "calificacion": "PUNTUAL",
+    "renovacionSugerida": 40000
+   }
+  },
+  {
+   "codigo": "P013",
+   "cliente": "C004",
+   "modalidad": "C3D",
+   "fecha": "2026-09-30",
+   "prestado": 20000,
+   "esperado": {
+    "ciclo": 2,
+    "tasaBp": 2000,
+    "nCuotas": 8,
+    "total": 24000,
+    "cuotaPrimera": 3000,
+    "cuotaNormal": 3000,
+    "plan": "8 × 30.00",
+    "fechaPrimera": "2026-10-03",
+    "fechaFin": "2026-10-24",
+    "cobrado": 0,
+    "saldo": 24000,
+    "cuotasPagadas": 0,
+    "cuotasVencidas": 0,
+    "atraso": 0,
+    "proximaFecha": "2026-10-03",
+    "diasAtraso": 0,
+    "estado": "AL DÍA",
+    "gananciaTotal": 4000,
+    "gananciaCobrada": 0,
+    "capitalEnLaCalle": 20000,
+    "calificacion": "PUNTUAL",
+    "renovacionSugerida": 30000
+   }
+  },
+  {
+   "codigo": "P014",
+   "cliente": "C012",
+   "modalidad": "C3D",
+   "fecha": "2026-09-30",
+   "prestado": 20000,
+   "esperado": {
+    "ciclo": 1,
+    "tasaBp": 2000,
+    "nCuotas": 8,
+    "total": 24000,
+    "cuotaPrimera": 3000,
+    "cuotaNormal": 3000,
+    "plan": "8 × 30.00",
+    "fechaPrimera": "2026-10-03",
+    "fechaFin": "2026-10-24",
+    "cobrado": 0,
+    "saldo": 24000,
+    "cuotasPagadas": 0,
+    "cuotasVencidas": 0,
+    "atraso": 0,
+    "proximaFecha": "2026-10-03",
+    "diasAtraso": 0,
+    "estado": "AL DÍA",
+    "gananciaTotal": 4000,
+    "gananciaCobrada": 0,
+    "capitalEnLaCalle": 20000,
+    "calificacion": null,
+    "renovacionSugerida": 20000
+   }
+  },
+  {
+   "codigo": "P015",
+   "cliente": "C013",
+   "modalidad": "C3D",
+   "fecha": "2026-09-30",
+   "prestado": 20000,
+   "esperado": {
+    "ciclo": 1,
+    "tasaBp": 2000,
+    "nCuotas": 8,
+    "total": 24000,
+    "cuotaPrimera": 3000,
+    "cuotaNormal": 3000,
+    "plan": "8 × 30.00",
+    "fechaPrimera": "2026-10-03",
+    "fechaFin": "2026-10-24",
+    "cobrado": 0,
+    "saldo": 24000,
+    "cuotasPagadas": 0,
+    "cuotasVencidas": 0,
+    "atraso": 0,
+    "proximaFecha": "2026-10-03",
+    "diasAtraso": 0,
+    "estado": "AL DÍA",
+    "gananciaTotal": 4000,
+    "gananciaCobrada": 0,
+    "capitalEnLaCalle": 20000,
+    "calificacion": null,
+    "renovacionSugerida": 20000
+   }
+  },
+  {
+   "codigo": "P016",
+   "cliente": "C004",
+   "modalidad": "SEMANAL",
+   "fecha": "2026-09-30",
+   "prestado": 30000,
+   "esperado": {
+    "ciclo": 1,
+    "tasaBp": 4000,
+    "nCuotas": 8,
+    "total": 42000,
+    "cuotaPrimera": 5250,
+    "cuotaNormal": 5250,
+    "plan": "8 × 52.50",
+    "fechaPrimera": "2026-10-03",
+    "fechaFin": "2026-11-21",
+    "cobrado": 0,
+    "saldo": 42000,
+    "cuotasPagadas": 0,
+    "cuotasVencidas": 0,
+    "atraso": 0,
+    "proximaFecha": "2026-10-03",
+    "diasAtraso": 0,
+    "estado": "AL DÍA",
+    "gananciaTotal": 12000,
+    "gananciaCobrada": 0,
+    "capitalEnLaCalle": 30000,
+    "calificacion": "PUNTUAL",
+    "renovacionSugerida": 40000
+   }
+  },
+  {
+   "codigo": "P017",
+   "cliente": "C010",
+   "modalidad": "SEMANAL",
+   "fecha": "2026-09-30",
+   "prestado": 20000,
+   "esperado": {
+    "ciclo": 1,
+    "tasaBp": 4000,
+    "nCuotas": 8,
+    "total": 28000,
+    "cuotaPrimera": 3500,
+    "cuotaNormal": 3500,
+    "plan": "8 × 35.00",
+    "fechaPrimera": "2026-10-03",
+    "fechaFin": "2026-11-21",
+    "cobrado": 0,
+    "saldo": 28000,
+    "cuotasPagadas": 0,
+    "cuotasVencidas": 0,
+    "atraso": 0,
+    "proximaFecha": "2026-10-03",
+    "diasAtraso": 0,
+    "estado": "AL DÍA",
+    "gananciaTotal": 8000,
+    "gananciaCobrada": 0,
+    "capitalEnLaCalle": 20000,
+    "calificacion": null,
+    "renovacionSugerida": 20000
+   }
+  }
+ ],
+ "pagos": [
+  {
+   "fila": 6,
+   "fecha": "2026-09-08",
+   "prestamo": "P001",
+   "cliente": "C001",
+   "monto": 3000,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "PUNTUAL",
+    "diasTarde": 0,
+    "cuota": 1,
+    "vencia": "2026-09-08",
+    "cuotaEsperada": 3000,
+    "saldoTrasPago": 21000,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 0
+   }
+  },
+  {
+   "fila": 7,
+   "fecha": "2026-09-08",
+   "prestamo": "P002",
+   "cliente": "C002",
+   "monto": 3000,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "PUNTUAL",
+    "diasTarde": 0,
+    "cuota": 1,
+    "vencia": "2026-09-08",
+    "cuotaEsperada": 3000,
+    "saldoTrasPago": 21000,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 0
+   }
+  },
+  {
+   "fila": 8,
+   "fecha": "2026-09-08",
+   "prestamo": "P003",
+   "cliente": "C003",
+   "monto": 3000,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "PUNTUAL",
+    "diasTarde": 0,
+    "cuota": 1,
+    "vencia": "2026-09-08",
+    "cuotaEsperada": 3000,
+    "saldoTrasPago": 21000,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 0
+   }
+  },
+  {
+   "fila": 9,
+   "fecha": "2026-09-08",
+   "prestamo": "P004",
+   "cliente": "C004",
+   "monto": 3000,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "PUNTUAL",
+    "diasTarde": 0,
+    "cuota": 1,
+    "vencia": "2026-09-08",
+    "cuotaEsperada": 3000,
+    "saldoTrasPago": 21000,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 0
+   }
+  },
+  {
+   "fila": 10,
+   "fecha": "2026-09-08",
+   "prestamo": "P005",
+   "cliente": "C005",
+   "monto": 3000,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "PUNTUAL",
+    "diasTarde": 0,
+    "cuota": 1,
+    "vencia": "2026-09-08",
+    "cuotaEsperada": 3000,
+    "saldoTrasPago": 21000,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 0
+   }
+  },
+  {
+   "fila": 11,
+   "fecha": "2026-09-12",
+   "prestamo": "P001",
+   "cliente": "C001",
+   "monto": 3000,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "DESPUÉS DE LA FECHA",
+    "diasTarde": 1,
+    "cuota": 2,
+    "vencia": "2026-09-11",
+    "cuotaEsperada": 3000,
+    "saldoTrasPago": 18000,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 3000
+   }
+  },
+  {
+   "fila": 12,
+   "fecha": "2026-09-11",
+   "prestamo": "P002",
+   "cliente": "C002",
+   "monto": 3000,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "PUNTUAL",
+    "diasTarde": 0,
+    "cuota": 2,
+    "vencia": "2026-09-11",
+    "cuotaEsperada": 3000,
+    "saldoTrasPago": 18000,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 3000
+   }
+  },
+  {
+   "fila": 13,
+   "fecha": "2026-09-11",
+   "prestamo": "P003",
+   "cliente": "C003",
+   "monto": 3000,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "PUNTUAL",
+    "diasTarde": 0,
+    "cuota": 2,
+    "vencia": "2026-09-11",
+    "cuotaEsperada": 3000,
+    "saldoTrasPago": 18000,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 3000
+   }
+  },
+  {
+   "fila": 14,
+   "fecha": "2026-09-11",
+   "prestamo": "P004",
+   "cliente": "C004",
+   "monto": 3000,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "PUNTUAL",
+    "diasTarde": 0,
+    "cuota": 2,
+    "vencia": "2026-09-11",
+    "cuotaEsperada": 3000,
+    "saldoTrasPago": 18000,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 3000
+   }
+  },
+  {
+   "fila": 15,
+   "fecha": "2026-09-11",
+   "prestamo": "P005",
+   "cliente": "C005",
+   "monto": 3000,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "PUNTUAL",
+    "diasTarde": 0,
+    "cuota": 2,
+    "vencia": "2026-09-11",
+    "cuotaEsperada": 3000,
+    "saldoTrasPago": 18000,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 3000
+   }
+  },
+  {
+   "fila": 16,
+   "fecha": "2026-09-15",
+   "prestamo": "P001",
+   "cliente": "C001",
+   "monto": 3000,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "DESPUÉS DE LA FECHA",
+    "diasTarde": 1,
+    "cuota": 3,
+    "vencia": "2026-09-14",
+    "cuotaEsperada": 3000,
+    "saldoTrasPago": 15000,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 6000
+   }
+  },
+  {
+   "fila": 17,
+   "fecha": "2026-09-14",
+   "prestamo": "P002",
+   "cliente": "C002",
+   "monto": 3000,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "PUNTUAL",
+    "diasTarde": 0,
+    "cuota": 3,
+    "vencia": "2026-09-14",
+    "cuotaEsperada": 3000,
+    "saldoTrasPago": 15000,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 6000
+   }
+  },
+  {
+   "fila": 18,
+   "fecha": "2026-09-14",
+   "prestamo": "P003",
+   "cliente": "C003",
+   "monto": 3000,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "PUNTUAL",
+    "diasTarde": 0,
+    "cuota": 3,
+    "vencia": "2026-09-14",
+    "cuotaEsperada": 3000,
+    "saldoTrasPago": 15000,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 6000
+   }
+  },
+  {
+   "fila": 19,
+   "fecha": "2026-09-14",
+   "prestamo": "P004",
+   "cliente": "C004",
+   "monto": 3000,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "PUNTUAL",
+    "diasTarde": 0,
+    "cuota": 3,
+    "vencia": "2026-09-14",
+    "cuotaEsperada": 3000,
+    "saldoTrasPago": 15000,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 6000
+   }
+  },
+  {
+   "fila": 20,
+   "fecha": "2026-09-14",
+   "prestamo": "P005",
+   "cliente": "C005",
+   "monto": 3000,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "PUNTUAL",
+    "diasTarde": 0,
+    "cuota": 3,
+    "vencia": "2026-09-14",
+    "cuotaEsperada": 3000,
+    "saldoTrasPago": 15000,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 6000
+   }
+  },
+  {
+   "fila": 21,
+   "fecha": "2026-09-18",
+   "prestamo": "P001",
+   "cliente": "C001",
+   "monto": 3000,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "DESPUÉS DE LA FECHA",
+    "diasTarde": 1,
+    "cuota": 4,
+    "vencia": "2026-09-17",
+    "cuotaEsperada": 3000,
+    "saldoTrasPago": 12000,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 9000
+   }
+  },
+  {
+   "fila": 22,
+   "fecha": "2026-09-17",
+   "prestamo": "P002",
+   "cliente": "C002",
+   "monto": 3000,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "PUNTUAL",
+    "diasTarde": 0,
+    "cuota": 4,
+    "vencia": "2026-09-17",
+    "cuotaEsperada": 3000,
+    "saldoTrasPago": 12000,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 9000
+   }
+  },
+  {
+   "fila": 23,
+   "fecha": "2026-09-17",
+   "prestamo": "P003",
+   "cliente": "C003",
+   "monto": 3000,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "PUNTUAL",
+    "diasTarde": 0,
+    "cuota": 4,
+    "vencia": "2026-09-17",
+    "cuotaEsperada": 3000,
+    "saldoTrasPago": 12000,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 9000
+   }
+  },
+  {
+   "fila": 24,
+   "fecha": "2026-09-17",
+   "prestamo": "P004",
+   "cliente": "C004",
+   "monto": 3000,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "PUNTUAL",
+    "diasTarde": 0,
+    "cuota": 4,
+    "vencia": "2026-09-17",
+    "cuotaEsperada": 3000,
+    "saldoTrasPago": 12000,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 9000
+   }
+  },
+  {
+   "fila": 25,
+   "fecha": "2026-09-17",
+   "prestamo": "P005",
+   "cliente": "C005",
+   "monto": 3000,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "PUNTUAL",
+    "diasTarde": 0,
+    "cuota": 4,
+    "vencia": "2026-09-17",
+    "cuotaEsperada": 3000,
+    "saldoTrasPago": 12000,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 9000
+   }
+  },
+  {
+   "fila": 26,
+   "fecha": "2026-09-19",
+   "prestamo": "P006",
+   "cliente": "C006",
+   "monto": 5250,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "PUNTUAL",
+    "diasTarde": 0,
+    "cuota": 1,
+    "vencia": "2026-09-19",
+    "cuotaEsperada": 5250,
+    "saldoTrasPago": 36750,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 0
+   }
+  },
+  {
+   "fila": 27,
+   "fecha": "2026-09-19",
+   "prestamo": "P007",
+   "cliente": "C009",
+   "monto": 3500,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "PUNTUAL",
+    "diasTarde": 0,
+    "cuota": 1,
+    "vencia": "2026-09-19",
+    "cuotaEsperada": 3500,
+    "saldoTrasPago": 24500,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 0
+   }
+  },
+  {
+   "fila": 28,
+   "fecha": "2026-09-21",
+   "prestamo": "P001",
+   "cliente": "C001",
+   "monto": 3000,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "DESPUÉS DE LA FECHA",
+    "diasTarde": 1,
+    "cuota": 5,
+    "vencia": "2026-09-20",
+    "cuotaEsperada": 3000,
+    "saldoTrasPago": 9000,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 12000
+   }
+  },
+  {
+   "fila": 29,
+   "fecha": "2026-09-20",
+   "prestamo": "P002",
+   "cliente": "C002",
+   "monto": 3000,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "PUNTUAL",
+    "diasTarde": 0,
+    "cuota": 5,
+    "vencia": "2026-09-20",
+    "cuotaEsperada": 3000,
+    "saldoTrasPago": 9000,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 12000
+   }
+  },
+  {
+   "fila": 30,
+   "fecha": "2026-09-20",
+   "prestamo": "P003",
+   "cliente": "C003",
+   "monto": 3000,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "PUNTUAL",
+    "diasTarde": 0,
+    "cuota": 5,
+    "vencia": "2026-09-20",
+    "cuotaEsperada": 3000,
+    "saldoTrasPago": 9000,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 12000
+   }
+  },
+  {
+   "fila": 31,
+   "fecha": "2026-09-20",
+   "prestamo": "P004",
+   "cliente": "C004",
+   "monto": 3000,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "PUNTUAL",
+    "diasTarde": 0,
+    "cuota": 5,
+    "vencia": "2026-09-20",
+    "cuotaEsperada": 3000,
+    "saldoTrasPago": 9000,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 12000
+   }
+  },
+  {
+   "fila": 32,
+   "fecha": "2026-09-20",
+   "prestamo": "P005",
+   "cliente": "C005",
+   "monto": 3000,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "PUNTUAL",
+    "diasTarde": 0,
+    "cuota": 5,
+    "vencia": "2026-09-20",
+    "cuotaEsperada": 3000,
+    "saldoTrasPago": 9000,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 12000
+   }
+  },
+  {
+   "fila": 33,
+   "fecha": "2026-09-25",
+   "prestamo": "P001",
+   "cliente": "C001",
+   "monto": 3000,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "DESPUÉS DE LA FECHA",
+    "diasTarde": 2,
+    "cuota": 6,
+    "vencia": "2026-09-23",
+    "cuotaEsperada": 3000,
+    "saldoTrasPago": 6000,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 15000
+   }
+  },
+  {
+   "fila": 34,
+   "fecha": "2026-09-23",
+   "prestamo": "P002",
+   "cliente": "C002",
+   "monto": 3000,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "PUNTUAL",
+    "diasTarde": 0,
+    "cuota": 6,
+    "vencia": "2026-09-23",
+    "cuotaEsperada": 3000,
+    "saldoTrasPago": 6000,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 15000
+   }
+  },
+  {
+   "fila": 35,
+   "fecha": "2026-09-23",
+   "prestamo": "P003",
+   "cliente": "C003",
+   "monto": 3000,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "PUNTUAL",
+    "diasTarde": 0,
+    "cuota": 6,
+    "vencia": "2026-09-23",
+    "cuotaEsperada": 3000,
+    "saldoTrasPago": 6000,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 15000
+   }
+  },
+  {
+   "fila": 36,
+   "fecha": "2026-09-23",
+   "prestamo": "P004",
+   "cliente": "C004",
+   "monto": 3000,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "PUNTUAL",
+    "diasTarde": 0,
+    "cuota": 6,
+    "vencia": "2026-09-23",
+    "cuotaEsperada": 3000,
+    "saldoTrasPago": 6000,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 15000
+   }
+  },
+  {
+   "fila": 37,
+   "fecha": "2026-09-23",
+   "prestamo": "P005",
+   "cliente": "C005",
+   "monto": 3000,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "PUNTUAL",
+    "diasTarde": 0,
+    "cuota": 6,
+    "vencia": "2026-09-23",
+    "cuotaEsperada": 3000,
+    "saldoTrasPago": 6000,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 15000
+   }
+  },
+  {
+   "fila": 38,
+   "fecha": "2026-09-26",
+   "prestamo": "P001",
+   "cliente": "C001",
+   "monto": 3000,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "PUNTUAL",
+    "diasTarde": 0,
+    "cuota": 7,
+    "vencia": "2026-09-26",
+    "cuotaEsperada": 3000,
+    "saldoTrasPago": 3000,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 18000
+   }
+  },
+  {
+   "fila": 39,
+   "fecha": "2026-09-26",
+   "prestamo": "P002",
+   "cliente": "C002",
+   "monto": 3000,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "PUNTUAL",
+    "diasTarde": 0,
+    "cuota": 7,
+    "vencia": "2026-09-26",
+    "cuotaEsperada": 3000,
+    "saldoTrasPago": 3000,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 18000
+   }
+  },
+  {
+   "fila": 40,
+   "fecha": "2026-09-26",
+   "prestamo": "P003",
+   "cliente": "C003",
+   "monto": 3000,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "PUNTUAL",
+    "diasTarde": 0,
+    "cuota": 7,
+    "vencia": "2026-09-26",
+    "cuotaEsperada": 3000,
+    "saldoTrasPago": 3000,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 18000
+   }
+  },
+  {
+   "fila": 41,
+   "fecha": "2026-09-26",
+   "prestamo": "P004",
+   "cliente": "C004",
+   "monto": 3000,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "PUNTUAL",
+    "diasTarde": 0,
+    "cuota": 7,
+    "vencia": "2026-09-26",
+    "cuotaEsperada": 3000,
+    "saldoTrasPago": 3000,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 18000
+   }
+  },
+  {
+   "fila": 42,
+   "fecha": "2026-09-26",
+   "prestamo": "P005",
+   "cliente": "C005",
+   "monto": 3000,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "PUNTUAL",
+    "diasTarde": 0,
+    "cuota": 7,
+    "vencia": "2026-09-26",
+    "cuotaEsperada": 3000,
+    "saldoTrasPago": 3000,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 18000
+   }
+  },
+  {
+   "fila": 43,
+   "fecha": "2026-09-26",
+   "prestamo": "P006",
+   "cliente": "C006",
+   "monto": 5250,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "PUNTUAL",
+    "diasTarde": 0,
+    "cuota": 2,
+    "vencia": "2026-09-26",
+    "cuotaEsperada": 5250,
+    "saldoTrasPago": 31500,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 5250
+   }
+  },
+  {
+   "fila": 44,
+   "fecha": "2026-09-26",
+   "prestamo": "P007",
+   "cliente": "C009",
+   "monto": 3500,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "PUNTUAL",
+    "diasTarde": 0,
+    "cuota": 2,
+    "vencia": "2026-09-26",
+    "cuotaEsperada": 3500,
+    "saldoTrasPago": 21000,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 3500
+   }
+  },
+  {
+   "fila": 45,
+   "fecha": "2026-09-26",
+   "prestamo": "P008",
+   "cliente": "C002",
+   "monto": 5250,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "PUNTUAL",
+    "diasTarde": 0,
+    "cuota": 1,
+    "vencia": "2026-09-26",
+    "cuotaEsperada": 5250,
+    "saldoTrasPago": 36750,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 0
+   }
+  },
+  {
+   "fila": 46,
+   "fecha": "2026-09-26",
+   "prestamo": "P009",
+   "cliente": "C007",
+   "monto": 5250,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "PUNTUAL",
+    "diasTarde": 0,
+    "cuota": 1,
+    "vencia": "2026-09-26",
+    "cuotaEsperada": 5250,
+    "saldoTrasPago": 36750,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 0
+   }
+  },
+  {
+   "fila": 47,
+   "fecha": "2026-09-26",
+   "prestamo": "P010",
+   "cliente": "C008",
+   "monto": 5250,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "PUNTUAL",
+    "diasTarde": 0,
+    "cuota": 1,
+    "vencia": "2026-09-26",
+    "cuotaEsperada": 5250,
+    "saldoTrasPago": 36750,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 0
+   }
+  },
+  {
+   "fila": 48,
+   "fecha": "2026-09-29",
+   "prestamo": "P002",
+   "cliente": "C002",
+   "monto": 3000,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "PUNTUAL",
+    "diasTarde": 0,
+    "cuota": 8,
+    "vencia": "2026-09-29",
+    "cuotaEsperada": 3000,
+    "saldoTrasPago": 0,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 21000
+   }
+  },
+  {
+   "fila": 49,
+   "fecha": "2026-09-29",
+   "prestamo": "P005",
+   "cliente": "C005",
+   "monto": 3000,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "PUNTUAL",
+    "diasTarde": 0,
+    "cuota": 8,
+    "vencia": "2026-09-29",
+    "cuotaEsperada": 3000,
+    "saldoTrasPago": 0,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 21000
+   }
+  },
+  {
+   "fila": 50,
+   "fecha": "2026-09-29",
+   "prestamo": "P003",
+   "cliente": "C003",
+   "monto": 3000,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "PUNTUAL",
+    "diasTarde": 0,
+    "cuota": 8,
+    "vencia": "2026-09-29",
+    "cuotaEsperada": 3000,
+    "saldoTrasPago": 0,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 21000
+   }
+  },
+  {
+   "fila": 51,
+   "fecha": "2026-09-29",
+   "prestamo": "P004",
+   "cliente": "C004",
+   "monto": 3000,
+   "despuesDeHora": null,
+   "esperado": {
+    "puntualidad": "PUNTUAL",
+    "diasTarde": 0,
+    "cuota": 8,
+    "vencia": "2026-09-29",
+    "cuotaEsperada": 3000,
+    "saldoTrasPago": 0,
+    "control": "✔ Monto OK",
+    "pagadoAntes": 21000
+   }
+  }
+ ],
+ "inicio": {
+  "cajaHoy": -42250,
+  "cobradoHoy": 0,
+  "prestamosAtrasados": 1,
+  "montoAtraso": 3000,
+  "prestamosVigentes": 13,
+  "porCobrar": 367750,
+  "capitalEnLaCalle": 278750,
+  "gananciaCobrada": 29000,
+  "programados": 0,
+  "patrimonio": 325500,
+  "periodo": {
+   "desde": "2026-09-05",
+   "hasta": "2026-09-30",
+   "saldoInicial": 0,
+   "cobros": 150250,
+   "aportes": 207500,
+   "prestamos": 400000,
+   "retiros": 0,
+   "saldoFinal": -42250,
+   "control": 0
+  }
+ }
+}
