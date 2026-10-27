@@ -1,4 +1,4 @@
-// Genera prestacloud-app/tests/fixtures/v13_golden.json a partir de PRESTAMOS_v13.xlsx.
+// Genera prestacloud-app/tests/Fixtures/v13_golden.json a partir de PRESTAMOS_v13.xlsx.
 //
 // Uso:   node tools/generar_golden_v13.mjs <ruta/PRESTAMOS_v13.xlsx> [salida.json]
 //
@@ -10,7 +10,7 @@
 import fs from "node:fs";
 import JSZip from "jszip";
 
-const [, , entrada, salida = "prestacloud-app/tests/fixtures/v13_golden.json"] = process.argv;
+const [, , entrada, salida = "prestacloud-app/tests/Fixtures/v13_golden.json"] = process.argv;
 if (!entrada) {
   console.error("Uso: node tools/generar_golden_v13.mjs <PRESTAMOS_v13.xlsx> [salida.json]");
   process.exit(1);

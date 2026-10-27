@@ -21,8 +21,7 @@ prestacloud-app/
 ├── tests/Unit/      # Casos T1–T24 del documento de validación del Excel v13 y reglas por cuenta
 ├── tests/Paridad/   # El motor contra los valores guardados del libro PRESTAMOS v13
 ├── tests/Integracion/ # Contra MySQL 5.7 real (PC_TEST_DB=1)
-├── tests/Fixtures/  # ReglasV13: las reglas de Daniel, como dato de prueba
-└── tests/fixtures/  # v13_golden.json: solo códigos y cifras, sin nombres de clientes
+└── tests/Fixtures/  # ReglasV13 (las reglas de Daniel, como dato de prueba) y v13_golden.json (solo códigos y cifras, sin nombres)
 deploy/              # deploy.sh, servidor.sh, verificar-publicacion.sh y pruebas del propio despliegue (ci/)
 docker/php/          # PHP 8.2 + Apache, igual que el hosting
 tools/               # Herramientas de desarrollo (no se despliegan)
@@ -56,7 +55,7 @@ Ramas `develop` → dev y `staging` → QA, con GitHub Actions por SSH al mismo 
 
 ## Dataset dorado (paridad con el Excel)
 
-`tests/fixtures/v13_golden.json` se genera a partir de los **valores guardados** del libro, sin nombres:
+`tests/Fixtures/v13_golden.json` se genera a partir de los **valores guardados** del libro, sin nombres:
 
 ```bash
 cd tools && npm install

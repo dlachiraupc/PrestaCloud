@@ -23,7 +23,7 @@ use PrestaCloud\Core\Tramo;
 /**
  * Paridad con el libro PRESTAMOS_v13.xlsx.
  *
- * Compara el motor con los VALORES GUARDADOS del Excel (tests/fixtures/v13_golden.json, generado con
+ * Compara el motor con los VALORES GUARDADOS del Excel (tests/Fixtures/v13_golden.json, generado con
  * tools/generar_golden_v13.mjs) usando como "hoy" el 30/09/2026, que es la fecha con la que el libro
  * calculó por última vez. Cada celda comparada está nombrada con su columna del Excel.
  *
@@ -44,7 +44,7 @@ final class ParidadV13Test extends TestCase
 
     public static function setUpBeforeClass(): void
     {
-        self::$g = json_decode((string) file_get_contents(__DIR__ . '/../fixtures/v13_golden.json'), true, 512, JSON_THROW_ON_ERROR);
+        self::$g = json_decode((string) file_get_contents(__DIR__ . '/../Fixtures/v13_golden.json'), true, 512, JSON_THROW_ON_ERROR);
         $c = self::$g['config'];
 
         $aumentos = [];
