@@ -46,3 +46,6 @@ desktop.ini
 /logs/
 .claude/settings.local.json
 prestacloud-app/VERSION
+
+# Credenciales de los entornos del hosting (.env con contraseñas): solo en este equipo
+/entornos/
