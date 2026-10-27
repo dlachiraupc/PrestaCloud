@@ -28,6 +28,16 @@ Los nombres de dominio y de base son una propuesta: si cambian, se ajustan en `d
 5. `deploy/verificar-publicacion.sh`: portada y `salud.php` (200, base de datos y núcleo de cálculo en ese servidor, PHP 8.2) y que
    `.env`, `src/`, `vendor/`, `migrations/` y `tests/` no se sirvan.
 
+## Cómo se accede al hosting (llaves)
+
+El acceso por SSH usa una **llave de despliegue** (par público/privado):
+
+- La parte **pública** ya está autorizada en cPanel (*SSH Access*) para el ERP. Es la misma cuenta del hosting, así que sirve también
+  para PrestaCloud: no hay que autorizar nada nuevo.
+- La parte **privada** está solo en los secretos de GitHub (`SSH_KEY`). GitHub no permite leerla después de guardarla, por eso hay que
+  copiarla desde su origen (donde se generó) al repositorio de PrestaCloud, junto con `SSH_HOST`, `SSH_PORT` y `SSH_USER`.
+- Ninguna de estas credenciales se guarda en el repositorio ni en la documentación.
+
 ## Preparación de un entorno nuevo (una sola vez por entorno)
 
 Lo hace Daniel: yo no tengo ni debo tener las credenciales del hosting ni la clave de despliegue.
