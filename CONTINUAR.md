@@ -21,7 +21,7 @@ con MySQL 5.7 son 70 pruebas y 1185 aserciones, 1 omitida a propósito).
 
 | Qué | Por qué no está en GitHub | Cómo llevarlo |
 |---|---|---|
-| **Llave SSH de despliegue** (`id_sysventasweb`) y su contraseña | Es privada y da acceso al hosting | Copiarla por un medio seguro (gestor de contraseñas o memoria USB cifrada) a `~/.ssh/` del equipo nuevo, o generar una llave nueva y autorizarla en cPanel → *SSH Access*. Nunca por correo, chat ni repositorio. |
+| **Llave SSH de despliegue del hosting** (la misma del ERP) y su contraseña | Es privada y da acceso al hosting | Copiarla por un medio seguro (gestor de contraseñas o memoria USB cifrada) a `~/.ssh/` del equipo nuevo, o generar una llave nueva y autorizarla en cPanel → *SSH Access*. Nunca por correo, chat ni repositorio. |
 | **`.env` de dev y QA** (contraseñas de base de datos) | Llevan contraseñas | Si las bases aún no existen en cPanel, no hay nada que copiar: `node tools/generar_env.mjs` crea unas nuevas en `entornos/` (git la ignora). Si ya existen, copiar `dev.env` y `qa.env` por un medio seguro desde `C:\Users\Administrador\prestacloud-entornos\`. |
 | **Secretos de GitHub Actions** (`SSH_HOST`, `SSH_PORT`, `SSH_USER`, `SSH_KEY`) | Viven en GitHub, no en el equipo | No hay que mover nada. |
 | **Libro `PRESTAMOS_v13.xlsx`** | Tiene clientes reales (Ley N.º 29733) | Ya está en OneDrive. Solo hace falta para volver a generar `tests/Fixtures/v13_golden.json`, que ya está versionado. |
