@@ -25,7 +25,7 @@ prestacloud-app/storage/*
 # =============================================
 # DATOS REALES: nunca al repositorio (Ley N.º 29733)
 # Los libros de Excel del negocio y los volcados de base de datos se quedan fuera.
-# Las pruebas usan prestacloud-app/tests/fixtures/ (solo códigos y cifras, sin nombres).
+# Las pruebas usan prestacloud-app/tests/Fixtures/ (solo códigos y cifras, sin nombres).
 # =============================================
 *.xlsx
 *.xlsm

@@ -4,7 +4,7 @@ Gestión de préstamos y cobranza para prestamistas: clientes, préstamos, cuota
 Servicio de **EmpresasCloud**, en el mismo hosting (cPanel, PHP 8.2, MySQL 5.7) que el ERP, con repositorio, base de datos y despliegue propios.
 
 Estado: **Fase 0**. Motor de cálculo, esquema de base de datos y despliegue a dev/QA; todavía no hay pantallas (la raíz web solo muestra una
-página de estado). Ver `DOCUMENTOS/Plan_Fases_y_Validacion.md`.
+página de estado). Ver `DOCUMENTOS/Plan_Fases_y_Validacion.md`. Para retomar el trabajo en otro equipo: `CONTINUAR.md`.
 
 **Las reglas de negocio son de cada cuenta** (cada prestamista define las suyas: modalidades, tasas, cuotas, puntualidad, calificación y
 tipos de caja). El motor no tiene reglas propias: siempre recibe las de la cuenta. Ver `DOCUMENTOS/REGLAS_DE_NEGOCIO.md`.
